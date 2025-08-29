@@ -1,0 +1,149 @@
+.hero {
+    justify-content: center;
+    display: grid;
+    place-content: center;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    
+}
+
+/*form-input animation*/
+.form-input {
+    width: 120%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #4e4e4e;
+    border-radius: 10px;
+    background-color: #c3dfff;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.form-input:focus {
+    border-color: #4285f4;
+    border-width: 2px;
+}
+
+.form-label {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+    color: #4e4e4e;
+    pointer-events: none;
+    transition: all 0.2s;
+    background-color: #c3dfff;
+    padding: 0 4px;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown)
++ .form-label {
+    transform: translateY(-24px) scale(0.85);
+    color: #4285f4;
+}
+
+/* submition button editing*/
+.submit-button {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border: 3px solid #4285f4;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.1);
+    color:#4285f4;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+/*submition button animation*/ 
+.submit-button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #4285f4;
+    z-index: -1;
+}
+
+.submit-button:hover, .submit-button:focus {
+    color: white;
+}
+
+.submit-button:hover:before, .submit-button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.submit-button:active {
+    transform: scale(0.9);
+}
+
+.error-message {
+    color: #e53e3e; /* A nice red color */
+    font-size: 0.875rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the checkbox and the label */
+    margin-bottom: 20px;
+}
+
+#terms {
+    /* Basic styling for the checkbox input */
+    width: 20px;
+    height: 20px;
+}
+
+.checkbox-group label {
+    font-size: 0.9rem;
+    color: #555;
+    cursor: pointer;
+    /* Reset label positioning to align with the checkbox */
+    position: static;
+    transform: none;
+    pointer-events: all;
+}
+
+.password-container {
+    position: relative; /* Essential for positioning the toggle-password */
+    margin-bottom: 20px; /* Add some space below each password field */
+}
+
+/* Ensure the form-input itself has space for the toggle */
+.password-container .form-input {
+    padding-right: 40px; /* Adjust this value as needed to make space for the eye icon */
+    width: calc(100% - 20px); /* Adjust width if necessary, depending on your base form-input styles */
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    right: 15px; /* Adjust to position within the input's right padding */
+    top: 50%; /* Vertically center it */
+    transform: translateY(-50%); /* Fine-tune vertical centering */
+    cursor: pointer;
+    user-select: none; /* Prevent text selection of the icon */
+    color: #888; /* A subtle color for the icon */
+    font-size: 1.2em; /* Make the icon a bit larger */
+    z-index: 10; /* Ensure it's above the input */
+}
